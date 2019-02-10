@@ -1,0 +1,29 @@
+Title:
+	Jared Hamilton
+	Section: A
+	Traveling Salesman
+
+Problem Description:
+	
+	Everyone is familiar with the traveling salesman problem.  It is to find the shortest hamiltonian circuit from a group of points in a 2D plane whose coordinates are known.  
+	This is an NP-hard problem, in that there exists no known optimal solution with a polynomial time complexity.  I am proposing a dynamic approach that finds a sub optimal 
+	solution in a much more forgiving time complexity compared to that of finding the optimal solution.  To summarize, this algorithm first finds the outlining convex shape 
+	among initial points p[] whose vertices v[] are in p[] and contains all other points.  This establishes the initial base hamiltonian circuit, and the order of its vertices is 
+	expressed generally in the optimal solution.  The next half of this algorithm  dynamically seeks out the remaining untouched inner points in a distance cost effective manner.  
+	Once all inner points are added, we have our sub-optimal solution.
+
+Program Documentation:	BUILT WITH SFML.  This program is very straight foward.  All the user needs to do is enter a positive integer (representing number of locations, preferably less than 500)--and the program takes care of the rest by drawing the path on the window.  
+			User may need to focus in the render window after the algorithm completes.  
+
+Tests:	Case 1: input: 10,  output: window shows route as it should be.  console outputed ordered list of points: (27, 987), (28, 766), (57, 489), (415, 362), (390, 225), (608, 362), (915, 97), (770, 719), (729, 743), (517, 607), (27, 987), 
+	Case 2: input: 500, output: window shows route as expected, took approx. 3-4 seconds to run.  console outputed large list of points (not shown here).
+	Case 3: input: 0,  Result: terminate called, because input did not meet requirements.
+	Case 4: input: -1, Result: terminate called, because input did not meet requirements.
+	Case 5: input: 5.11, Result: program performed as if the user entered 5.
+	Case 6: input: "hello world", Result: terminate called, because input did not meet requirements.
+
+Reflection:
+	I wouldn't say I learned a lot, rather, I got a lot of good coding practice time in--which helped a lot as I took exam 2 right after writing this program.  I learned how much of a pain SFML can be if you don't exactly know how
+	everything works in the background of CLion.  I did NOT design this program to be user friendly.  The purpose of this program was to test out some concepts relating to the TSP I had thought of.  I designed this program to be used 
+	only by me, and then after I wrote it, I went over and made a few tweaks so the graders could undrestand what was going on so they could run it.  Most of the problems I encountered were mostly attributed to CLion, not as much my 
+	knowledge of c++ or algorithms in general.  One change I would make would be to change the name of class "location" to something like "point", as that makes much more sense when looking at the arithmetic in the various functions.
